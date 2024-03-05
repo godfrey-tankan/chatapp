@@ -14,7 +14,7 @@ app.post("/signup", async (req, res) => {
 
   try {
     const r = await axios.post(
-      "https://api.chatengine.io/users/",
+      "https://chatengine.io/projects/751585ac-b002-489b-9832-40e11b4ad911#users/",
       { username, secret, email, first_name, last_name },
       { headers: { "Private-Key": CHAT_ENGINE_PRIVATE_KEY } }
     );
@@ -28,18 +28,20 @@ app.post("/login", async (req, res) => {
   const { username, secret } = req.body;
 
   try {
-    const r = await axios.get("https://api.chatengine.io/users/me/", {
-      headers: {
-        "Project-ID": CHAT_ENGINE_PROJECT_ID,
-        "User-Name": username,
-        "User-Secret": secret,
-      },
-    });
+    const r = await axios.get(
+      "https://chatengine.io/projects/751585ac-b002-489b-9832-40e11b4ad911#users/",
+      {
+        headers: {
+          "Project-ID": CHAT_ENGINE_PROJECT_ID,
+          "User-Name": username,
+          "User-Secret": secret,
+        },
+      }
+    );
     return res.status(r.status).json(r.data);
   } catch (e) {
     return res.status(e.response.status).json(e.response.data);
   }
 });
 
-// vvv On port 3001!
 app.listen(3001);

@@ -12,8 +12,6 @@ const CHAT_ENGINE_PRIVATE_KEY = process.env.CHAT_ENGINE_PRIVATE_KEY;
 app.post("/signup", async (req, res) => {
   const { username, secret, email, first_name, last_name } = req.body;
 
-  // Store a user-copy on Chat Engine!
-  // Docs at rest.chatengine.io
   try {
     const r = await axios.post(
       "https://api.chatengine.io/users/",
@@ -29,8 +27,6 @@ app.post("/signup", async (req, res) => {
 app.post("/login", async (req, res) => {
   const { username, secret } = req.body;
 
-  // Fetch this user from Chat Engine in this project!
-  // Docs at rest.chatengine.io
   try {
     const r = await axios.get("https://api.chatengine.io/users/me/", {
       headers: {

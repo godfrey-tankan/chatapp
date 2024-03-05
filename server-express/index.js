@@ -11,10 +11,6 @@ app.use(cors({ origin: true }));
 app.post("/signup", async (req, res) => {
   const { username, secret, email, first_name, last_name } = req.body;
 
-  // console.log("Write user into DB.");
-  // return res.json({ user: {} });
-
-  // Store a user-copy on Chat Engine!
   try {
     const r = await axios.post(
       "https://api.chatengine.io/users/",

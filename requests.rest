@@ -3,8 +3,8 @@ POST http://localhost:3001/login
 Content-Type: application/json
 
 {
-  "username": "adam",
-  "secret": "pass1234"
+  "username": "tankan",
+  "secret": "admin"
 }
 
 ###
@@ -13,9 +13,9 @@ POST http://localhost:3001/signup
 Content-Type: application/json
 
 {
-  "username": "zack",
-  "secret": "pass1234",
-  "email": "zack@gmail.com",
-  "first_name": "Zack",
-  "last_name": "Engine"
+  "username": "tankan",
+  "secret": "admin",
+  "email": "tnqn@gmail.com",
+  "first_name": "tanatswa",
+  "last_name": "tnqn"
 }
